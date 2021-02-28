@@ -20,9 +20,11 @@ namespace ProjectManager.Controllers
         public ActionResult Login(Users users)
         {
             Users user = loginBLL.Login(users);
-
+          
+            
             if (user!=null)
             {
+                Session["user"] = user;
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -49,7 +51,13 @@ namespace ProjectManager.Controllers
 
             }
 
+        }
 
+      
+        public ActionResult LogOut()
+        {
+            Session["user"]=null;
+            return RedirectToAction("Index", "Login");
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@if (Session["user"]!=null)
+{
     <main>
         <div class="row">
             <div class="main-section">
@@ -27,14 +28,14 @@
                                                 <h4>TOPLAM PROJE</h4>
                                                 <span>0</span>
                                             </li>
-                                            
+
                                             <li>
                                                 <a href="#" title="">PROFİLİ GÖRÜNTÜLE</a>
                                             </li>
                                         </ul>
                                     </div><!--user-data end-->
-                           
-                                     
+
+
                                 </div><!--main-left-sidebar end-->
                             </div>
                             <div class="col-lg-6 col-md-8 no-pd">
@@ -44,7 +45,7 @@
                                         <div class="post-st">
                                             <ul>
                                                 <li><a class="post-jb active" href="#" title="">BİR PROJE YAYINLA</a></li>
-                                             
+
                                             </ul>
                                         </div><!--post-st end-->
                                     </div><!--post-topbar end-->
@@ -58,18 +59,18 @@
                                         </div><!--post-bar end-->
                                     </div><!--posty end-->
                                     @*<div class="process-comm">
-                                        <div class="spinner">
-                                            <div class="bounce1"></div>
-                                            <div class="bounce2"></div>
-                                            <div class="bounce3"></div>
-                                        </div>
-                                    </div>*@
+                                            <div class="spinner">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                        </div>*@
                                 </div><!--posts-section end-->
-                            </div> 
+                            </div>
                         </div>
 
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="post-popup pst-pj">
@@ -81,8 +82,8 @@
                             <div class="col-lg-12">
                                 <input type="text" name="title" placeholder="Title">
                             </div>
-                            
-                            
+
+
                             <div class="col-lg-12">
                                 <textarea name="description" placeholder="Description"></textarea>
                             </div>
@@ -121,8 +122,8 @@
                             <div class="col-lg-12">
                                 <input type="text" name="skills" placeholder="BECERİLER">
                             </div>
-                            
-                           
+
+
                             <div class="col-lg-12">
                                 <textarea name="description" placeholder="AÇIKLAMA"></textarea>
                             </div>
@@ -141,3 +142,10 @@
 
 
     </main>
+}
+else
+{
+<p>
+    lütfen giriş yapın
+</p>}
+
