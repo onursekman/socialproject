@@ -11,6 +11,7 @@ namespace ProjectManager.Controllers
     public class LoginController : Controller
     {
         LoginBLL loginBLL = new LoginBLL();
+        ProjectBLL projectBLL = new ProjectBLL();
         // GET: Login
         public ActionResult Index()
         {
@@ -24,6 +25,14 @@ namespace ProjectManager.Controllers
             
             if (user!=null)
             {
+                List<Project> projects = projectBLL.Projects(user.Id);
+                int projesayisi=0;
+                foreach (var item in projects)
+                {
+                    projesayisi++;
+
+                }
+                Session["projesayisi"] = projesayisi;
                 Session["user"] = user;
                 return RedirectToAction("Index", "Home");
             }

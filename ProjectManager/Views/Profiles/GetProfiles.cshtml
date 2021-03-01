@@ -1,7 +1,12 @@
-﻿
+﻿@using ProjectManagerDLL.DataBase
 @{
     ViewBag.Title = "GetProfiles";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Users users = null;
+
+    users = Session["user"] as Users;
+    int projesayisi = Convert.ToInt32(Session["projesayisi"]);
 }
 
 
@@ -39,7 +44,7 @@
                                                
                                                 <ul class="flw-status">
                                                     <li>
-                                                        <span>TOPLAM PROJE SAYISI</span>
+                                                        <span>@projesayisi</span>
                                                         <b>0</b>
                                                     </li>
                                                    
@@ -72,7 +77,7 @@
                                                     <li><i class="fa fa-star"></i></li>
                                                     <li><i class="fa fa-star-half-o"></i></li>
                                                 </ul>
-                                                <a href="#" title="">DURUM ÖĞRENCİ</a>
+                                                <a href="#" title="">@users.Job</a>
                                             </div><!--star-descp end-->
                                             <div class="tab-feed st2">
                                                 <ul>
@@ -84,7 +89,7 @@
                                                     </li>
                                                     <li data-tab="info-dd">
                                                         <a href="#" title="">
-                                                            <img src="C:\Users\ismail\source\repos\socialproject\ProjectManager\images/ic2.png" alt="">
+                                                            <img src="~/Content/images/ic2.png" alt="">
                                                             <span>BİLGİ</span>
                                                         </a>
                                                     </li>
