@@ -10,12 +10,16 @@ namespace ProjectManager.Controllers
 {
     public class ProfilesController : Controller
     {
-        [HttpGet]
-        public ActionResult GetProfiles(Post posts)
-        {
 
-            
-            return View();
+        PostBLL postBLL = new PostBLL();
+        [HttpGet]
+        public ActionResult GetProfiles()
+        {
+            Users users = Session["user"] as Users;
+           List<Post> GetPost= postBLL.GetPost(users.Id);
+
+            return View(GetPost);
         }
+
     }
 }

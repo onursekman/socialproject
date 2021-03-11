@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginBLL.cs" />
+    <Compile Include="PostBLL.cs" />
     <Compile Include="ProfilesBLL.cs" />
     <Compile Include="ProjectBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
