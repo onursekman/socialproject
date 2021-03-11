@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectManagerDLL.DataBase;
+using ProjetctManagerBLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +10,11 @@ namespace ProjectManager.Controllers
 {
     public class ProfilesController : Controller
     {
-     
         [HttpGet]
-        public ActionResult GetProfiles()
+        public ActionResult GetProfiles(Post posts)
         {
 
-
+            
             return View();
         }
     }
