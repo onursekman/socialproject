@@ -19,9 +19,19 @@ namespace ProjectManager.Controllers
         {
 
             Users users = Session["user"] as Users;
-            List<Post> GetPost = postBLL.GetPost(users.Id);
+            if (users!=null)
+            {
+                List<Post> GetPost = postBLL.GetPost(users.Id);
 
-            return View(GetPost);
+                return View(GetPost);
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+           
         }
 
        

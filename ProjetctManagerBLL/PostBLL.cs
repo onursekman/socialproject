@@ -18,5 +18,10 @@ namespace ProjetctManagerBLL
             return  repo.List(x=> x.PostUser == id);
         }
 
+
+        public int PostInsert(Post post)
+        {
+            return repo.Insert(post);
+        }
     }
 }

@@ -17,7 +17,7 @@
                         <div class="col-lg-6">
                             <div class="cmp-info">
                                 <div class="cm-logo">
-                                  <!--  <img src="~/Content/images/asasas.png" alt="">-->
+                                    <!--  <img src="~/Content/images/asasas.png" alt="">-->
                                     <p>Bu benim ilk projem .</p>
                                 </div><!--cm-logo end-->
                                 <img src="~/Content/images/Sprint-logo-design-Codesign-agency.png" alt="">
@@ -103,26 +103,53 @@
                                                 </div>
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <select>
-                                                            <option value="ögrenci">YAZILIM</option>
-                                                            <option value="sirket">MAKİNE</option>
-                                                            <option value="otomasyon">OTOMASYON</option>
-                                                            <option value="elektronik">ELEKTRONİK</option>
-                                                            <option value="free">FREE</option>
 
-                                                        </select>
+                                                        @Html.DropDownList("Job",
+                                                                         new List<SelectListItem> {
+                                                                             new SelectListItem {
+                                                                                Text="YAZILIM",
+                                                                                Value="YAZILIM",
+
+                                                                             },
+                                                                             new SelectListItem {
+                                                                                Text="MAKİNE",
+                                                                                Value="MAKİNE",
+                                                                             },
+                                                                              new SelectListItem {
+                                                                                Text="OTOMASYON",
+                                                                                Value="OTOMASYON",
+                                                                             },
+                                                                               new SelectListItem {
+                                                                                Text="ELEKTRONİK",
+                                                                                Value="ELEKTRONİK",
+                                                                             },
+                                                                                new SelectListItem {
+                                                                                Text="FREE",
+                                                                                Value="FREE",
+                                                                             },
+                                                                         })
+
+
+                                                        @*<select>
+                                                                <option value="ögrenci">YAZILIM</option>
+                                                                <option value="sirket">MAKİNE</option>
+                                                                <option value="otomasyon">OTOMASYON</option>
+                                                                <option value="elektronik">ELEKTRONİK</option>
+                                                                <option value="free">FREE</option>
+
+                                                            </select>*@
                                                     </div>
                                                 </div>
 
-                                                
-                                                
+
+
 
                                                 @*<div class="col-lg-12 no-pdd">
-            <div class="sn-field">
-                <input type="password" name="repeat-password" placeholder="Repeat Password">
-                <i class="la la-lock"></i>
-            </div>
-        </div>*@
+                                                        <div class="sn-field">
+                                                            <input type="password" name="repeat-password" placeholder="Repeat Password">
+                                                            <i class="la la-lock"></i>
+                                                        </div>
+                                                    </div>*@
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="checky-sec st2">
                                                         <div class="fgt-sec">

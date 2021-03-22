@@ -52,7 +52,7 @@ namespace ProjectManager.Controllers
           int i=  loginBLL.Register(users);
             if (i==1)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Login");
             }
             else
             {
