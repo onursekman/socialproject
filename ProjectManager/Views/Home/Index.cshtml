@@ -1,12 +1,13 @@
 ﻿@using ProjectManagerDLL.DataBase
+ @model List<Post>
 
 @{
 
-    Users users=Session["user"] as Users;
+    Users users = Session["user"] as Users;
     ViewBag.Title = "Home Page";
     int projesayisi = Convert.ToInt32(Session["projesayisi"]);
 }
-@if (Session["user"]!=null)
+@if (Session["user"] != null)
 {
     <main>
         <div class="row">
@@ -54,103 +55,155 @@
                                             </ul>
                                         </div><!--post-st end-->
                                     </div><!--post-topbar end-->
+                                    <div class="posts-section">
+                                        @foreach (Post item in Model)
+                                        {
+                                            <div class="post-bar">
+                                                <div class="post_topbar">
+                                                    <div class="usy-dt">
+                                                        <img src="http://via.placeholder.com/50x50" alt="">
+                                                        <div class="usy-name">
+                                                            <h3>@users.UserName @users.UserSurname</h3>
+                                                            <span><img src="images/clock.png" alt="">3 min ago</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ed-opts">
+                                                        <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                                                        <ul class="ed-options">
+                                                            <li><a href="#" title="">DÜZENLE</a></li>
+                                                            <li><a href="#" title="">SİL</a></li>
+                                                            <li><a href="#" title="">GİZLE</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="epi-sec">
 
 
-                                    <div class="posty">
-                                        <div class="post-bar no-margin">
+                                                    <ul class="bk-links">
+                                                        <li><a href="#" title=""><i class="la la-bookmark"></i></a></li>
+                                                        <li><a href="#" title=""><i class="la la-envelope"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="job_descp">
+                                                    <h3>@item.PostTitle  <a href="#" title="">view more</a></h3>
 
+                                                    <p>@item.PostContent </p>
 
-                                            @*postlar buraya gelicek*@
-                                        </div><!--post-bar end-->
-                                    </div><!--posty end-->
-                                    @*<div class="process-comm">
-                                            <div class="spinner">
-                                                <div class="bounce1"></div>
-                                                <div class="bounce2"></div>
-                                                <div class="bounce3"></div>
+                                                </div>
+                                                <div class="job-status-bar">
+                                                    <ul class="like-com">
+                                                        <li>
+                                                            <a href="#"><i class="la la-heart"></i> Like</a>
+                                                            <img src="images/liked-img.png" alt="">
+                                                            <span>25</span>
+                                                        </li>
+                                                        <li><a href="#" title="" class="com"><img src="images/com.png" alt=""> Comment 15</a></li>
+                                                    </ul>
+                                                    <a><i class="la la-eye"></i>Views 50</a>
+                                                </div>
                                             </div>
-                                        </div>*@
-                                </div><!--posts-section end-->
+
+                                        }
+                                        
+
+
+
+                                            <div class="posty">
+                                                <div class="post-bar no-margin">
+
+
+
+                                                </div><!--post-bar end-->
+                                            </div><!--posty end-->
+                                            <div class="process-comm">
+                                                <div class="spinner">
+                                                    <div class="bounce1"></div>
+                                                    <div class="bounce2"></div>
+                                                    <div class="bounce3"></div>
+                                                </div>
+                                            </div>*
+                                        </div><!--posts-section end-->
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="post-popup pst-pj">
-            <div class="post-project">
-                <h3>Post a project</h3>
-                <div class="post-project-fields">
-                    <form>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <input type="text" name="title" placeholder="Title">
-                            </div>
+                <div class="post-popup pst-pj">
+                    <div class="post-project">
+                        <h3>Post a project</h3>
+                        <div class="post-project-fields">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input type="text" name="title" placeholder="Title">
+                                    </div>
 
 
-                            <div class="col-lg-12">
-                                <textarea name="description" placeholder="Description"></textarea>
-                            </div>
-                            <div class="col-lg-12">
-                                <ul>
-                                    <li><button class="active" type="submit" value="post">Post</button></li>
-                                    <li><a href="#" title="">Cancel</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div><!--post-project-fields end-->
-                <a href="#" title=""><i class="la la-times-circle-o"></i></a>
-            </div><!--post-project end-->
-        </div><!--post-project-popup end-->
-
-        <div class="post-popup job_post">
-            <div class="post-project">
-                <h3>Post a job</h3>
-                <div class="post-project-fields">
-                    <form>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <input type="text" name="title" placeholder="BAŞLIK">
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="inp-field">
-                                    <select>
-                                        <option>PROJE</option>
-                                        <option>İŞ İLANI</option>
-                                        <option>DESTEK EKİP</option>
-                                        <option>POST</option>
-                                    </select>
+                                    <div class="col-lg-12">
+                                        <textarea name="description" placeholder="Description"></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <ul>
+                                            <li><button class="active" type="submit" value="post">Post</button></li>
+                                            <li><a href="#" title="">Cancel</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <input type="text" name="skills" placeholder="BECERİLER">
-                            </div>
+                            </form>
+                        </div><!--post-project-fields end-->
+                        <a href="#" title=""><i class="la la-times-circle-o"></i></a>
+                    </div><!--post-project end-->
+                </div><!--post-project-popup end-->
+
+                <div class="post-popup job_post">
+                    <div class="post-project">
+                        <h3>Post a job</h3>
+                        <div class="post-project-fields">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input type="text" name="title" placeholder="BAŞLIK">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="inp-field">
+                                            <select>
+                                                <option>PROJE</option>
+                                                <option>İŞ İLANI</option>
+                                                <option>DESTEK EKİP</option>
+                                                <option>POST</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <input type="text" name="skills" placeholder="BECERİLER">
+                                    </div>
 
 
-                            <div class="col-lg-12">
-                                <textarea name="description" placeholder="AÇIKLAMA"></textarea>
-                            </div>
-                            <div class="col-lg-12">
-                                <ul>
-                                    <li><button class="active" type="submit" value="post">YAYINLA</button></li>
-                                    <li><a href="#" title="">İPTAL ET</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div><!--post-project-fields end-->
-                <a href="#" title=""><i class="la la-times-circle-o"></i></a>
-            </div><!--post-project end-->
-        </div><!--post-project-popup end-->
-
+                                    <div class="col-lg-12">
+                                        <textarea name="description" placeholder="AÇIKLAMA"></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <ul>
+                                            <li><button class="active" type="submit" value="post">YAYINLA</button></li>
+                                            <li><a href="#" title="">İPTAL ET</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!--post-project-fields end-->
+                        <a href="#" title=""><i class="la la-times-circle-o"></i></a>
+                    </div><!--post-project end-->
+                </div><!--post-project-popup end-->
+        </div>
 
     </main>
+            
 }
 else
 {
-<p>
-    lütfen giriş yapın
-</p>}
+    <p>
+        lütfen giriş yapın
+    </p>}
 
