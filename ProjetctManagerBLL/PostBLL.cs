@@ -23,5 +23,6 @@ namespace ProjetctManagerBLL
         {
             return repo.Insert(post);
         }
+
     }
 }
