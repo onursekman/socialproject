@@ -23,6 +23,8 @@ namespace ProjectManager.Controllers
             {
                 List<Post> GetPost = postBLL.GetPost(users.Id);
 
+                GetPost.Reverse();
+
                 return View(GetPost);
 
             }
