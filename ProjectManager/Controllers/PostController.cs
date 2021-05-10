@@ -19,7 +19,7 @@ namespace ProjectManager.Controllers
             post.PostUser = users.Id;
             postBLL.PostInsert(post);
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
