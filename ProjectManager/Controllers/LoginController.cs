@@ -12,7 +12,7 @@ namespace ProjectManager.Controllers
     {
         LoginBLL loginBLL = new LoginBLL();
         ProjectBLL projectBLL = new ProjectBLL();
-        // GET: Login
+        // GET: Logins
         public ActionResult Index()
         {
             return View();
