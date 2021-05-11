@@ -23,6 +23,11 @@ namespace ProjetctManagerBLL
         {
             return repo.Insert(post);
         }
+    
+        public int PostDelete(int id)
+        {
+            return repo.Find(x=> x.PostUser == id);
+        }
 
     }
 }
