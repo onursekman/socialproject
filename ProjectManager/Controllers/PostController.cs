@@ -18,8 +18,32 @@ namespace ProjectManager.Controllers
 
             post.PostUser = users.Id;
             postBLL.PostInsert(post);
+            
 
             return RedirectToAction("Index", "Home");
         }
+        public ActionResult PostDelete(Post post)
+        {
+            
+            Users users = Session["user"] as Users;
+
+            post.PostUser = users.Id;
+            postBLL.PostDelete(post.Id);
+
+
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult ProfilPostDelete(Post post)
+        {
+
+            Users users = Session["user"] as Users;
+
+            post.PostUser = users.Id;
+            postBLL.PostDelete(post.Id);
+
+
+            return RedirectToAction("GetProfiles", "Profiles");
+        }
+
     }
 }
