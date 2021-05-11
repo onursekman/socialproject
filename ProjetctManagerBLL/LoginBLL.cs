@@ -26,6 +26,17 @@ namespace ProjetctManagerBLL
             return repo.Find(x => x.Email == users.Email && x.Password == users.Password);
         }
 
+        public int UserDelete(int id)
+        {
+
+            Users user = repo.Find(x => x.Id == id);
+            //Post postt = repo.Find(x => x.Id == id);
+            //return repo.Delete(postt);
+
+            return repo.Delete(user);
+
+        }
+
 
 
 
