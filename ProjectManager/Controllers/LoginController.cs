@@ -68,5 +68,23 @@ namespace ProjectManager.Controllers
             Session["user"]=null;
             return RedirectToAction("Index", "Login");
         }
+
+        public ActionResult UserDelete(Users usersm)
+        {
+
+            Users users = Session["user"] as Users;
+
+            usersm.Id = users.Id;
+
+            loginBLL.UserDelete(usersm.Id);
+            //post.PostUser = users.Id;
+            //postBLL.PostDelete(post.Id);
+
+
+            return RedirectToAction("Index", "Login");
+
+        }
+
+
     }
 }

@@ -1,4 +1,6 @@
-﻿
+﻿@using ProjectManagerDLL.DataBase
+@model List<Users>
+
 @{
     ViewBag.Title = "GetSettings";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,7 +21,7 @@
 
 
 
-        
+
 
 
         <section class="profile-account-setting">
@@ -46,7 +48,7 @@
                                 <div class="tab-pane fade show active" id="nav-acc" role="tabpanel" aria-labelledby="nav-acc-tab">
                                     <div class="acc-setting">
                                         <h3>Account Setting</h3>
-                                        <form>
+                                        <form action="/Login/UserDelete"  >
                                             <div class="notbar">
                                                 <h4>Notification Sound</h4>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium nulla quis erat dapibus, varius hendrerit neque suscipit. Integer in ex euismod, posuere lectus id</p>
@@ -68,11 +70,18 @@
                                                     <a href="#" title=""><img src="images/up-btn.png" alt=""></a>
                                                 </div>
                                             </div><!--notbar end-->
+
                                             <div class="save-stngs">
+                                            
+                                               
                                                 <ul>
                                                     <li><button type="submit">Save Setting</button></li>
-                                                    <li><button type="submit">Restore Setting</button></li>
+                                                    @*<li><button type="submit">Restore Setting</button> <a href="~/Login/UserDelete/">uyarıı</a></li>*@
+                                                    <li><button href="~/Login/UserDelete/" type="submit">KULLANICI SİL </button> 
                                                 </ul>
+
+                                                
+
                                             </div><!--save-stngs end-->
                                         </form>
                                     </div><!--acc-setting end-->
@@ -400,7 +409,7 @@
 
 
 
-        
+
 
     </div><!--theme-layout end-->
 
