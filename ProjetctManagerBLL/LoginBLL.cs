@@ -14,9 +14,12 @@ namespace ProjetctManagerBLL
         
         public int Register(Users users)
         {
+
+
             users.Status = 1;
 
             return repo.Insert(users);
+
 
         }
 
@@ -30,9 +33,7 @@ namespace ProjetctManagerBLL
         {
 
             Users user = repo.Find(x => x.Id == id);
-            //Post postt = repo.Find(x => x.Id == id);
-            //return repo.Delete(postt);
-
+            
             return repo.Delete(user);
 
         }

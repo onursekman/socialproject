@@ -47,11 +47,17 @@ namespace ProjectManager.Controllers
         }
         [HttpPost]
         public ActionResult Register(Users users)
-        {
 
-          int i=  loginBLL.Register(users);
+        {
+            
+            int i=  loginBLL.Register(users);
             if (i==1)
             {
+                Session["users"] = users;
+                
+
+                
+
                 return RedirectToAction("Index", "Login");
             }
             else
