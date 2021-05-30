@@ -49,14 +49,17 @@ namespace ProjectManager.Controllers
         public ActionResult Register(Users users)
 
         {
-            
-            int i=  loginBLL.Register(users);
-            if (i==1)
-            {
-                Session["users"] = users;
-                
 
+
+            int i = loginBLL.Register(users);
+            if (i == 1)
+            {
                 
+                
+                Session["users"] = users;
+
+
+
 
                 return RedirectToAction("Index", "Login");
             }

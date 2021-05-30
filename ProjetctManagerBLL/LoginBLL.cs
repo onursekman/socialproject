@@ -16,6 +16,12 @@ namespace ProjetctManagerBLL
         {
 
 
+            //users.Status = 1;
+
+            //return repo.Insert(users);
+
+
+
             users.Status = 1;
 
             return repo.Insert(users);
