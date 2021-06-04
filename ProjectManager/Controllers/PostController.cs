@@ -47,10 +47,10 @@ namespace ProjectManager.Controllers
         public ActionResult GetProjelers()
         {
             Users users = Session["user"] as Users;
-            List<Post> GetPost = postBLL.GetPost(users.Id);
+            List<Post> GetPost = postBLL.TümPost(users.Id);
 
             return View(GetPost);
-            return View();
+            
 
         }
 

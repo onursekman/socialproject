@@ -11,11 +11,16 @@ namespace ProjetctManagerBLL
     public class PostBLL
     {
         Repository<Post> repo = new Repository<Post>();
+        
 
 
         public List<Post> GetPost(int id)
         {
             return repo.List(x => x.PostUser == id);
+        }
+        public List<Post> TümPost(int id)
+        {
+            return repo.List();
         }
 
 
@@ -31,6 +36,7 @@ namespace ProjetctManagerBLL
             Post postt = repo.Find(x => x.Id == id);
             return repo.Delete(postt);
         }
+        
 
 
     }

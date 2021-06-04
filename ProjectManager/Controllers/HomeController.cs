@@ -11,7 +11,7 @@ namespace ProjectManager.Controllers
     public class HomeController : Controller
 
 
-    {//sds
+    {//sdss
 
         PostBLL postBLL = new PostBLL();
         [HttpGet]
@@ -21,11 +21,12 @@ namespace ProjectManager.Controllers
             Users users = Session["user"] as Users;
             if (users!=null)
             {
-                List<Post> GetPost = postBLL.GetPost(users.Id);
+                //List<Post> GetPost = postBLL.GetPost(users.Id);
+                List<Post> tümpost = postBLL.TümPost(users.Id);
 
-                GetPost.Reverse();
+                tümpost.Reverse();
 
-                return View(GetPost);
+                return View(tümpost);
 
             }
             else
