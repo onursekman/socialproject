@@ -16,10 +16,6 @@ namespace ProjetctManagerBLL
         {
 
 
-            //users.Status = 1;
-
-            //return repo.Insert(users);
-
 
 
             users.Status = 1;
@@ -28,6 +24,11 @@ namespace ProjetctManagerBLL
 
 
         }
+        //public Users Update(Users  users)
+        //{
+        //    return repo.Update(users.Status = );
+
+        //}
 
 
         public Users Login(Users users)
@@ -35,14 +36,14 @@ namespace ProjetctManagerBLL
             return repo.Find(x => x.Email == users.Email && x.Password == users.Password);
         }
 
-        public int UserDelete(int id)
-        {
+        //public int UserDelete(int id)
+        //{
 
-            Users user = repo.Find(x => x.Id == id);
+        //    Users user = repo.Find(x => x.Id == id);
             
-            return repo.Delete(user);
+        //    return repo.Delete(user);
 
-        }
+        //}
 
 
 

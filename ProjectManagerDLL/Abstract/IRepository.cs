@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectManagerDLL.Abstract
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         List<T> List();
 
