@@ -18,11 +18,6 @@ namespace ProjetctManagerBLL
         {
             return repo.List(x => x.PostUser == id);
         }
-        public List<Post> TümPost(int id)
-        {
-            return repo.List();
-        }
-
 
         public int PostInsert(Post post)
         {

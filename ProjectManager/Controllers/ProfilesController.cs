@@ -16,8 +16,9 @@ namespace ProjectManager.Controllers
         public ActionResult GetProfiles()
         {
             Users users = Session["user"] as Users;
-           List<Post> GetPost= postBLL.GetPost(users.Id);
-
+             List<Post> GetPost= postBLL.GetPost(users.Id);
+            GetPost.Reverse();
+            
             return View(GetPost);
         }
 

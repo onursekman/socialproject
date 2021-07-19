@@ -12,6 +12,7 @@ namespace ProjectManager.Controllers
 
 
     {//sdss
+        
 
         PostBLL postBLL = new PostBLL();
         [HttpGet]
@@ -22,7 +23,7 @@ namespace ProjectManager.Controllers
             if (users!=null)
             {
                 //List<Post> GetPost = postBLL.GetPost(users.Id);
-                List<Post> tümpost = postBLL.TümPost(users.Id);
+                List<Post> tümpost = postBLL.GetPost(users.Id);
 
                 tümpost.Reverse();
 
@@ -36,7 +37,8 @@ namespace ProjectManager.Controllers
 
            
         }
+        
 
-       
+
     }
 }

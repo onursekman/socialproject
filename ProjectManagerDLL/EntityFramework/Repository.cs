@@ -40,10 +40,7 @@ namespace ProjectManagerDLL.EntityFramework
             return Save();
         }
 
-        public List<T> List()
-        {
-            return _objectSet.ToList();
-        }
+       
 
         public List<T> List(Expression<Func<T, bool>> where)
         {

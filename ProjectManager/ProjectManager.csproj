@@ -130,6 +130,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -271,8 +272,9 @@
     <Content Include="Views\Shared\_LoginLayoutPage.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Profiles\GetProfiles.cshtml" />
-    <Content Include="Views\Settings\GetSettings.cshtml" />
     <Content Include="Views\Post\GetProjelers.cshtml" />
+    <Content Include="Views\Settings\GetSettings.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

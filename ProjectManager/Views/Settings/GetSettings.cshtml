@@ -1,4 +1,5 @@
-﻿@using ProjectManagerDLL.DataBase
+﻿
+@using ProjectManagerDLL.DataBase
 @model List<Users>
 
 @{
@@ -24,6 +25,7 @@
 
 
 
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
         <section class="profile-account-setting">
             <div class="container">
                 <div class="account-tabs-setting">
@@ -48,7 +50,7 @@
                                 <div class="tab-pane fade show active" id="nav-acc" role="tabpanel" aria-labelledby="nav-acc-tab">
                                     <div class="acc-setting">
                                         <h3>Account Setting</h3>
-                                        <form action="/Login/UserDelete"  >
+                                        <form action="~/Settings/StatuHide">
                                             <div class="notbar">
                                                 <h4>Notification Sound</h4>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium nulla quis erat dapibus, varius hendrerit neque suscipit. Integer in ex euismod, posuere lectus id</p>
@@ -58,6 +60,7 @@
                                             </div><!--notbar end-->
                                             <div class="notbar">
                                                 <h4>Notification Email</h4>
+
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium nulla quis erat dapibus, varius hendrerit neque suscipit. Integer in ex euismod, posuere lectus id</p>
                                                 <div class="toggle-btn">
                                                     <a href="#" title=""><img src="images/up-btn.png" alt=""></a>
@@ -71,17 +74,20 @@
                                                 </div>
                                             </div><!--notbar end-->
 
-                                            <div class="save-stngs">
-                                            
-                                               
-                                                <ul>
-                                                    <li><button type="submit">Save Setting</button></li>
-                                                    @*<li><button type="submit">Restore Setting</button> <a href="~/Login/UserDelete/">uyarıı</a></li>*@
-                                                    <li><button href="~/Settings/StatuHide" type="submit">STATÜ 200 YAP </button>
-                                                    <li><button href="~/Settings/StatuHide" type="submit">STATÜ 200 YAP </button>
-                                                </ul>
 
-                                                
+                                            <div class="save-stngs">
+                                                  <li>
+
+
+
+                                                    <ul>
+                                                        <li><button type="submit">Save Setting</button></li>
+
+                                                        <li><button href="~/Settings/StatuHide" type="submit">STATÜ 0 YAP </button>
+
+                                                    </ul>
+                                                   </li>
+
 
                                             </div><!--save-stngs end-->
                                         </form>
@@ -146,6 +152,7 @@
                                             <!-- <h4>Work Status  -  Last Months Working Status</h4> -->
                                         </div><!--pro-work-status end-->
                                     </div><!--acc-setting end-->
+
                                 </div>
                                 <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
                                     <div class="acc-setting">
@@ -426,3 +433,4 @@
 
 </body>
 </html>
+

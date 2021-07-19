@@ -19,14 +19,15 @@ namespace ProjectManager.Controllers
         {
             Users users = Session["user"] as Users;
 
-            //usersManagerBll.Update(users.Id);
+           
             users.Status = 0;
 
 
             
             usersManagerBll.Update(users);
 
-            return View("GetSettings", "Settings");
+       
+            return RedirectToAction("LogOut", "Login");
 
 
 
@@ -36,9 +37,14 @@ namespace ProjectManager.Controllers
         }
         public ActionResult GetSettings()
         {
-
-
+            
+            
             return View();
+
+
+
+
+
         }
         
 
